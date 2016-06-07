@@ -1,0 +1,8 @@
+#!/bin/sh
+
+madsonic_path=/usr/pbi/madsonic-$(uname -m)
+tmpfile=$(mktemp /tmp/.XXXXXX)
+
+grep -v 'madsonic_' /etc/rc.conf > ${tmpfile}
+cat ${madsonic_path}/etc/rc.conf >> ${tmpfile}
+mv ${tmpfile} /etc/rc.conf
