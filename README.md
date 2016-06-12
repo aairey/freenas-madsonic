@@ -11,6 +11,9 @@ freebsd-update fetch install
 pkg install git gcc subversion
 freebsd-update fetch install
 portsnap fetch update
+portsnap extract
+pushd /usr/ports/devel/xdg-utils
+make && make install
 #below steps might not be necessary
 #echo "media:*:816:816::0:0:Media Plugins Daemon:/nonexistent:/usr/sbin/nologin" >> /usr/ports/UIDs
 #echo "media:*:816:" >> /usr/ports/GIDs
